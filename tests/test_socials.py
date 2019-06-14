@@ -44,10 +44,13 @@ def test_extract():
         'http://google.de',
         'http://facebook.com',
         'http://facebook.com/peterparker',
+        'http://facebook.com/peter[parker',  # Invalid character
         'mailto:bill@microsoft.com',
         'steve@microsoft.com',
         'https://www.linkedin.com/company/google/',
+        'https://www.linkedin.com/comp^any/google/',  # Invalid character
         'https://www.instagram.com/instagram/',
+        'https://www.instagram.com/instag-ram/',  # Invalid character
         'http://instagr.am/instagram',
     ]
     extraction = socials.extract(urls)
